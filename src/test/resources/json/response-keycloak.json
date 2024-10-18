@@ -1,0 +1,8 @@
+{
+  "access_token": "string",
+  "expires_in": 1,
+  "refresh_expires_in": 1,
+  "token_type": "string",
+  "not-before-policy": 1,
+  "scope": "string"
+}

@@ -13,15 +13,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Builder
 public class RequestPropertiesKeycloak {
     @FormProperty("client_id")
-    @JsonProperty("client_id")
     private String clientId;
 
     @FormProperty("grant_type")
-    @JsonProperty("grant_type")
     private String grantType;
 
     @FormProperty("client_secret")
-    @JsonProperty("client_secret")
     private String clientSecret;
 
 }

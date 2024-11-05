@@ -15,15 +15,12 @@ import java.util.Map;
 
 @Component
 @RequiredArgsConstructor
-public class KeyCloakRequestInterceptor {
+public class KeyCloakRequestInterceptor implements RequestInterceptor {
 
     private final KeycloakFeignClientService keycloakFeignClientService;
 
-    public RequestInterceptor addAuthorizeDataToRequest() {
-        return this::addAuthorizeData;
-    }
-
-    private void addAuthorizeData(RequestTemplate requestTemplate) {
+    @Override
+    public void apply(RequestTemplate requestTemplate) {
         requestTemplate
                 .headers()
                 .getOrDefault(HttpHeaders.AUTHORIZATION, List.of())
@@ -38,6 +35,6 @@ public class KeyCloakRequestInterceptor {
                         () ->
                                 requestTemplate.header(HttpHeaders.AUTHORIZATION, keycloakFeignClientService.getBearerToken())
                 );
-    }
 
+    }
 }

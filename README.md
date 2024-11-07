@@ -20,7 +20,7 @@
 * Добавить в проект зависимость:
 ```xml
 <dependency>
-  <groupId>ru.alfastrah.odm</groupId>
+  <groupId>ru.nikitinia.singleauthstarter</groupId>
   <artifactId>single-auth-starter</artifactId>
   <version>[actual version from pom.xml]</version>
 </dependency>
